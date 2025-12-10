@@ -42,6 +42,11 @@ app.listen(PORT, () => {
     console.log("✅ Server running on port", PORT)
 })
 
+// health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
 //npm install express mysql dotenv bcryptjs jsonwebtoken express-session cors body-parser //required dependecies
 
 /* company-website
