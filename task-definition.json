@@ -24,7 +24,7 @@
                 {
                     "appProtocol": "http",
                     "containerPort": 5000,
-                    "hostPort": 5000,
+                    "hostPort": 0,
                     "name": "culture-port-name",
                     "protocol": "tcp"
                 }
