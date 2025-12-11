@@ -34,7 +34,6 @@
         }
     ],
     "cpu": "1024",
-    "enableFaultInjection": false,
     "executionRoleArn": "arn:aws:iam::396913737331:role/culture_ecs_role",
     "family": "culture_task_ec2",
     "memory": "3072",
