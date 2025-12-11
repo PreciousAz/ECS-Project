@@ -33,10 +33,10 @@
             "volumesFrom": []
         }
     ],
-    "cpu": "1024",
+    "cpu": "256",
     "executionRoleArn": "arn:aws:iam::396913737331:role/culture_ecs_role",
     "family": "culture_task_ec2",
-    "memory": "3072",
+    "memory": "512",
     "networkMode": "bridge",
     "placementConstraints": [],
     "registeredAt": "2025-12-09T22:05:07.107Z",
