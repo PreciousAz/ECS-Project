@@ -1,15 +1,13 @@
 {
     "compatibilities": [
-        "EC2",
-        "FARGATE",
-        "MANAGED_INSTANCES"
+        "EC2"
     ],
     "containerDefinitions": [
         {
             "cpu": 0,
             "environment": [],
             "essential": true,
-            "image": "396913737331.dkr.ecr.us-east-1.amazonaws.com/gitversion:v0.1.1",
+            "image": "396913737331.dkr.ecr.us-east-1.amazonaws.com/culture@sha256:6fe4d5692c69286794cc58c38cd9b6c9459acd0b2d4b3629f06bee140ff36def",
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -41,7 +39,7 @@
     "memory": "512",
     "networkMode": "awsvpc",
     "placementConstraints": [],
-    "registeredAt": "2025-12-12T01:56:20.577Z",
+    "registeredAt": "2025-12-09T22:05:07.107Z",
     "registeredBy": "arn:aws:iam::396913737331:user/preshy",
     "requiresAttributes": [
         {
@@ -57,13 +55,10 @@
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
         },
         {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        },
+        {
             "name": "ecs.capability.execution-role-ecr-pull"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "ecs.capability.task-eni"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
@@ -72,13 +67,13 @@
     "requiresCompatibilities": [
         "EC2"
     ],
-    "revision": 15,
+    "revision": 3,
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
     "status": "ACTIVE",
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:396913737331:task-definition/culture_task_ec2:15",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:396913737331:task-definition/culture_task_ec2:3",
     "volumes": [],
     "tags": []
 }
