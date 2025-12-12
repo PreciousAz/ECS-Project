@@ -1,6 +1,8 @@
 {
     "compatibilities": [
-        "EC2"
+        "EC2",
+        "FARGATE",
+        "MANAGED_INSTANCES"
     ],
     "containerDefinitions": [
         {
@@ -15,7 +17,8 @@
                     "awslogs-create-group": "true",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
-                }
+                },
+                "secretOptions": []
             },
             "mountPoints": [],
             "name": "culture-container",
@@ -23,7 +26,7 @@
                 {
                     "appProtocol": "http",
                     "containerPort": 5000,
-                    "hostPort": 0,
+                    "hostPort": 5000,
                     "name": "culture-port-name",
                     "protocol": "tcp"
                 }
@@ -36,9 +39,9 @@
     "executionRoleArn": "arn:aws:iam::396913737331:role/culture_ecs_role",
     "family": "culture_task_ec2",
     "memory": "512",
-    "networkMode": "bridge",
+    "networkMode": "awsvpc",
     "placementConstraints": [],
-    "registeredAt": "2025-12-12T01:49:00.560Z",
+    "registeredAt": "2025-12-12T01:56:20.577Z",
     "registeredBy": "arn:aws:iam::396913737331:user/preshy",
     "requiresAttributes": [
         {
@@ -57,19 +60,25 @@
             "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
     "requiresCompatibilities": [
         "EC2"
     ],
-    "revision": 13,
+    "revision": 15,
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
     "status": "ACTIVE",
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:396913737331:task-definition/culture_task_ec2:13",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:396913737331:task-definition/culture_task_ec2:15",
     "volumes": [],
     "tags": []
 }
